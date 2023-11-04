@@ -1,0 +1,40 @@
+import java.util.*;
+public class Q2
+{
+    public static void main(String []args)
+    {
+        Scanner obj = new Scanner (System.in);
+        for(;;)
+        {
+            System.out.println("Enter exit to terminate");
+            String ans = obj.nextLine();
+            int new_ans ;
+            new_ans =Integer.parseInt(ans);
+            ans.toLowerCase();
+            ans.trim();
+            if (ans.equals("exit"))
+                break;
+            System.out.println("Enter an opertor");
+            ans = obj.nextLine();
+            System.out.println("Enter another number");
+            int num2 = obj.nextInt();
+            int give_1 = Q2.op_check(new_ans ,ans , num2);
+            System.out.println(give_1);
+        }
+    }
+    public static int op_check(int new_ans,String ans,int num2)
+    {
+        int tot = 0;
+        if(ans == "+")
+            tot = new_ans + num2;
+        if(ans == "-")
+            tot = new_ans - num2;
+        if(ans == "*")
+            tot = new_ans * num2;
+        if(ans == "/")
+            tot = new_ans / num2;
+        if(ans == "%")
+            tot = new_ans % num2;
+        return tot;
+    }
+}
